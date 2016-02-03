@@ -1,3 +1,8 @@
-# COMP397-W2016-StateMachine
+# COMP397-W2016-Assignment 01
 
-COMP397 State Machine Template for Web Game Programming @ Centennial
+## The Maze Runner Game
+
+Live Version:
+http://comp397-alexandre-ass01.azurewebsites.net/
+
+Enjoy :)
