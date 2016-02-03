@@ -5,8 +5,17 @@ var config;
         function Scene() {
         }
         Scene.MENU = 0;
-        Scene.PLAY = 1;
-        Scene.OVER = 2;
+        Scene.NODE1 = 1;
+        Scene.NODE2 = 2;
+        Scene.NODE3 = 3;
+        Scene.NODE4 = 4;
+        Scene.NODE5 = 5;
+        Scene.NODE6 = 6;
+        Scene.NODE7 = 7;
+        Scene.KILLED = 8;
+        Scene.SMASHED = 9;
+        Scene.NOEXIT = 10;
+        Scene.EXIT = 11;
         return Scene;
     })();
     config.Scene = Scene;

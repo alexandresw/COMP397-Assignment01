@@ -7,8 +7,17 @@ var currentScene;
 var scene;
 // Game Scenes
 var menu;
-var play;
-var over;
+var node1;
+var node2;
+var node3;
+var node4;
+var node5;
+var node6;
+var node7;
+var killed;
+var smashed;
+var exit;
+var noexit;
 function init() {
     // create a reference the HTML canvas Element
     canvas = document.getElementById("canvas");
@@ -57,19 +66,84 @@ function changeScene() {
             currentScene = menu;
             console.log("Starting MENU Scene");
             break;
-        case config.Scene.PLAY:
-            // show the PLAY scene
+        case config.Scene.NODE1:
+            // show the Node1 scene
             stage.removeAllChildren();
-            play = new scenes.Play();
-            currentScene = play;
-            console.log("Starting PLAY Scene");
+            node1 = new scenes.Node1();
+            currentScene = node1;
+            console.log("Starting Node1 Scene");
             break;
-        case config.Scene.OVER:
-            // show the game OVER scene
+        case config.Scene.NODE2:
+            // show the Node2 scene
             stage.removeAllChildren();
-            over = new scenes.Over();
-            currentScene = over;
-            console.log("Starting OVER Scene");
+            node2 = new scenes.Node2();
+            currentScene = node2;
+            console.log("Starting Node2 Scene");
+            break;
+        case config.Scene.NODE3:
+            // show the Node3 scene
+            stage.removeAllChildren();
+            node3 = new scenes.Node3();
+            currentScene = node3;
+            console.log("Starting Node3 Scene");
+            break;
+        case config.Scene.NODE4:
+            // show the Node4 scene
+            stage.removeAllChildren();
+            node4 = new scenes.Node4();
+            currentScene = node4;
+            console.log("Starting Node4 Scene");
+            break;
+        case config.Scene.NODE5:
+            // show the Node5 scene
+            stage.removeAllChildren();
+            node5 = new scenes.Node5();
+            currentScene = node5;
+            console.log("Starting Node5 Scene");
+            break;
+        case config.Scene.NODE6:
+            // show the Node6 scene
+            stage.removeAllChildren();
+            node6 = new scenes.Node6();
+            currentScene = node6;
+            console.log("Starting Node6 Scene");
+            break;
+        case config.Scene.NODE7:
+            // show the Node7 scene
+            stage.removeAllChildren();
+            node7 = new scenes.Node7();
+            currentScene = node7;
+            console.log("Starting Node7 Scene");
+            break;
+        case config.Scene.KILLED:
+            // show the Killed scene
+            stage.removeAllChildren();
+            killed = new scenes.OutcomeKilled();
+            currentScene = killed;
+            console.log("Starting Killed Scene");
+            break;
+        case config.Scene.SMASHED:
+            // show the Killed scene
+            stage.removeAllChildren();
+            smashed = new scenes.OutcomeSmashed();
+            currentScene = smashed;
+            console.log("Starting Smashed Scene");
+            break;
+        case config.Scene.EXIT:
+            // show the EXIT scene
+            stage.removeAllChildren();
+            exit = new scenes.OutcomeExit();
+            currentScene = exit;
+            console.log("Starting Exit Scene");
+            break;
+        case config.Scene.NOEXIT:
+            // show the Noexit scene
+            stage.removeAllChildren();
+            noexit = new scenes.OutcomeNoexit(currentScene === node4 ? config.Scene.NODE4 :
+                currentScene === node6 ? config.Scene.NODE6 :
+                    config.Scene.NODE7);
+            currentScene = noexit;
+            console.log("Starting Noexit Scene");
             break;
     }
     console.log(currentScene.numChildren);
