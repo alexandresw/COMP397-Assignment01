@@ -17,6 +17,15 @@ var scenes;
         Node7.prototype.start = function () {
             var bitmap = new createjs.Bitmap("../../Assets/images/node7.jpg");
             this.addChild(bitmap);
+            var shape = new createjs.Shape();
+            shape.graphics.beginFill("#333").drawRect(0, 0, config.Screen.WIDTH, 100);
+            shape.alpha = 0.8;
+            this.addChild(shape);
+            this._gameLabel = new createjs.Text("You find a monster. Get out of here!!!\n Run away!!!!!!!", "20px Consolas", "#FFF");
+            this._gameLabel.x = 20;
+            this._gameLabel.y = 20;
+            this._gameLabel.lineWidth = config.Screen.WIDTH - 40;
+            this.addChild(this._gameLabel);
             // add the NEXT button to the PLAY scene
             this._leftButton = new objects.Button("LeftButton", config.Screen.CENTER_X - 200, config.Screen.CENTER_Y + 60);
             this.addChild(this._leftButton);
@@ -28,7 +37,7 @@ var scenes;
             // NEXT Button event listener
             this._rightButton.on("click", this._rightButtonClick, this);
             // add the BACK button to the PLAY scene
-            this._backButton = new objects.Button("BackButton", 100, 50);
+            this._backButton = new objects.Button("BackButton", 100, config.Screen.HEIGHT - 50);
             this.addChild(this._backButton);
             // // BACK Button event listener
             this._backButton.on("click", this._backButtonClick, this);

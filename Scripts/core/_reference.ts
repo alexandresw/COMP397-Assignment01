@@ -6,7 +6,6 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/scene.ts" />
 
-/// <reference path="../scenes/over.ts" />
 /// <reference path="../scenes/node1.ts" />
 /// <reference path="../scenes/node2.ts" />
 /// <reference path="../scenes/node3.ts" />

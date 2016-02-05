@@ -17,6 +17,16 @@ var scenes;
         Node1.prototype.start = function () {
             var bitmap = new createjs.Bitmap("../../Assets/images/node1.jpg");
             this.addChild(bitmap);
+            var shape = new createjs.Shape();
+            shape.graphics.beginFill("#333").drawRect(0, 0, config.Screen.WIDTH, 100);
+            shape.alpha = 0.8;
+            this.addChild(shape);
+            this._gameLabel = new createjs.Text("Choose the correct path to find the exit. \nYou can go to left, " +
+                "right or backward.\nGood luck!!!", "20px Consolas", "#FFF");
+            this._gameLabel.x = 20;
+            this._gameLabel.y = 20;
+            this._gameLabel.lineWidth = config.Screen.WIDTH - 40;
+            this.addChild(this._gameLabel);
             // add the NEXT button to the PLAY scene
             this._leftButton = new objects.Button("LeftButton", config.Screen.CENTER_X - 40, config.Screen.CENTER_Y + 40);
             this.addChild(this._leftButton);
